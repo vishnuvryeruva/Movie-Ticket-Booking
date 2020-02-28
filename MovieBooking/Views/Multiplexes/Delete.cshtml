@@ -1,0 +1,64 @@
+﻿@model MovieBooking.Models.Multiplex
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Multiplex</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.MName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Movie.MName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TLoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TLoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<MovieBooking.Models.Multiplex>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+    <p>
+        Find By Location : @Html.TextBox("searchstring")
+        <input type="submit" value="Search" />
+    </p>
+}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Movie.MName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TLoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie.MName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TLoc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.TId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.TId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TId })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,58 @@
+﻿@model MovieBooking.Models.Multiplex
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Multiplex</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.MName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Movie.MName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TLoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TLoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

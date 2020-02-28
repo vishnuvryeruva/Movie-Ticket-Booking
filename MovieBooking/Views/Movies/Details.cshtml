@@ -1,0 +1,41 @@
+﻿@model MovieBooking.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MRate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
